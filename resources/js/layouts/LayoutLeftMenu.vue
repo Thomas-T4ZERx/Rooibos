@@ -1,5 +1,5 @@
 <template>
-    <div class="layout-sidebar">
+    <div class="layout-sidebar ">
         <Menu :model="items" class="layout-menu-container"/>
     </div>
 </template>
@@ -7,6 +7,7 @@
 <script setup>
 import { ref } from "vue";
 import MegaMenu from 'primevue/megamenu';
+import LayoutFooter from "./LayoutFooter.vue";
 
 
 const items = ref([

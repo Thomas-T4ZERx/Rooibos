@@ -40,7 +40,7 @@
                 <div>
                     <span class="font-medium block mb-2">Mode sombre</span>
 <br>
-                    <ToggleSwitch v-model="checked" @click="toggleDarkMode" />
+                    <ToggleSwitch v-model="checked" @click="emitDarkModeChange" />
                 </div>
                 <div>
                     <Button icon="pi pi-plus" class="mr-2" severity="secondary" text />
@@ -58,13 +58,17 @@
 import { ref } from 'vue';
 
 const checked = ref(false);
-const isDarkMode = ref(false);
 
 function toggleDarkMode() {
-    isDarkMode.value = !isDarkMode.value;
-    const element = document.documentElement; // Utilisez document.documentElement pour accéder au <html>
-    element.classList.toggle('my-app-dark', isDarkMode.value); // Applique la classe si isDarkMode est true
+
 }
+const isDarkMode = ref(false);
+const emitDarkModeChange = () => {
+    isDarkMode.value = !isDarkMode.value;
+    const element = document.documentElement;
+    element.classList.toggle('my-app-dark', isDarkMode.value);
+};
+
 
 const op = ref();
 const members = ref([

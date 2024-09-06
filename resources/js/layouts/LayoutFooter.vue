@@ -1,11 +1,10 @@
 
 <template>
-   ddssdsd
+
+    <div class="doc-section-description">Développé par Thomas - Rooibos</div>
 </template>
 
 <script setup>
-import { ref } from 'vue';
-
 </script>
 
 

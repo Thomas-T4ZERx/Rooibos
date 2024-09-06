@@ -4,18 +4,19 @@
             <layout-nav-bar/>
         </header>
 
-        <div class="main">
-            <aside class="nav">
-                <layout-left-menu/>
-            </aside>
 
-            <div class="content">
+        <aside class="nav">
+            <layout-left-menu/>
+        </aside>
+            <div class="layout-main-container">
+
+                <div class="layout-main">
+
                 <slot></slot>
-
-
+                </div>
             </div>
 
-        </div>
+
         <footer class="footer">
             <layout-footer/>
         </footer>
@@ -31,38 +32,5 @@ import LayoutFooter from "./LayoutFooter.vue";
 </script>
 
 <style scoped>
-html, body {
-    height: 100%;
-    margin: 0;
-}
 
-.layout {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-.header {
-    flex: 0 0 auto; /* Ne pas étirer le header */
-}
-
-.main {
-    display: flex;
-    flex: 1; /* Prend tout l'espace disponible */
-}
-
-.nav {
-    flex: 0 0 300px; /* Largeur fixe ou ajustable pour le menu */
-    display: flex;
-    flex-direction: column;
-}
-
-.content {
-    flex: 1; /* Prend tout l'espace restant */
-    overflow: auto;
-}
-
-.footer {
-    flex: 0 0 auto; /* Ne pas étirer le footer */
-}
 </style>
