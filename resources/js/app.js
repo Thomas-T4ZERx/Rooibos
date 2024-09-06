@@ -6,7 +6,8 @@ import PrimeVue from 'primevue/config';
 import Layout from "./layouts/Layout.vue";
 import Aura from '@primevue/themes/aura';
 import Select from "primevue/select";
-
+import Popover from 'primevue/popover';
+import ToggleSwitch from 'primevue/toggleswitch';
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
@@ -26,14 +27,17 @@ createInertiaApp({
                     preset: Aura,
                     options: {
                         prefix: 'p',
-                        darkModeSelector: 'system'
-                    }
+                        darkModeSelector: '.my-app-dark'
+                    },
+                    ripple: true
                 }
             });
 
         // Register the Select component globally
         app.component('Select', Select);
-
+        app.component('Popover', Popover);
+        app.component('ToggleSwitch', ToggleSwitch);
         return app.mount(el);
     }
 }).then();
+

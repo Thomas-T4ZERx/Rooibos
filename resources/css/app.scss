@@ -1,0 +1,34 @@
+
+
+html, body{
+    font-family:
+        "Inter var",               /* Police Inter (variable version) */
+        -apple-system,             /* Police système par défaut sur macOS et iOS */
+        BlinkMacSystemFont,        /* Ancienne police système pour Safari */
+        "Segoe UI",                /* Police par défaut pour Windows */
+        Roboto,                    /* Police par défaut pour Android et Google */
+        Helvetica,                 /* Police courante sur de nombreuses plateformes */
+        Arial,                     /* Police générique sans-serif */
+        sans-serif,                /* Police générique sans-serif si les autres échouent */
+        "Apple Color Emoji",       /* Police spécifique aux émojis sur Apple */
+        "Segoe UI Emoji",          /* Police spécifique aux émojis sur Windows */
+        "Segoe UI Symbol",         /* Police pour les symboles sur Windows */
+        serif;                     /* Police avec empattement en cas d'échec de toutes les précédentes */
+
+}
+
+
+.layout-topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    height: 4rem;
+    transition: width var(--layout-section-transition-duration);
+    display: flex;
+    color: var(--topbar-item-text-color);
+    background-color: var(--topbar-bg);
+    border-bottom: 1px solid transparent;
+    box-shadow: 0 4px 10px #00000008, 0 0 2px #0000000f, 0 2px 6px #0000001f;
+}
