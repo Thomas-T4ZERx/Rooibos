@@ -1,5 +1,5 @@
 <template>
-    <Textarea v-model="value" rows="5" cols="30" :invalid="value ===''"  />
+
 </template>
 
 <script setup>

@@ -1,48 +1,68 @@
-<script setup>
-
-import LayoutNavBar from "./LayoutNavBar.vue";
-import 'primeicons/primeicons.css'
-
-
-</script>
-
 <template>
-
-
-
-
-
-    <div class="header">
-        <div class="header-text">
+    <div class="layout">
+        <header class="header ">
             <layout-nav-bar/>
+        </header>
+
+        <div class="main">
+            <aside class="nav">
+                <layout-left-menu/>
+            </aside>
+
+            <div class="content">
+                <slot></slot>
+
+
+            </div>
 
         </div>
-    </div>
-
-    <div class="nav">
-
-    </div>
-
-    <div class="main">
-        <div class="content">
-            <slot></slot>
-        </div>
-
-        <div class="sidebar">
-        </div>
-    </div>
-
-    <div class="footer">
+        <footer class="footer">
+            <layout-footer/>
+        </footer>
     </div>
 
 </template>
 
+<script setup>
+import LayoutNavBar from "./LayoutNavBar.vue";
+import 'primeicons/primeicons.css';
+import LayoutLeftMenu from "./LayoutLeftMenu.vue";
+import LayoutFooter from "./LayoutFooter.vue";
+</script>
+
 <style scoped>
-.my-switch-slider {
-    border-radius: 0;
+html, body {
+    height: 100%;
+    margin: 0;
 }
 
-.my-switch-slider:before {
-    border-radius: 0;
+.layout {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.header {
+    flex: 0 0 auto; /* Ne pas étirer le header */
+}
+
+.main {
+    display: flex;
+    flex: 1; /* Prend tout l'espace disponible */
+}
+
+.nav {
+    flex: 0 0 300px; /* Largeur fixe ou ajustable pour le menu */
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1; /* Prend tout l'espace restant */
+    overflow: auto;
+}
+
+.footer {
+    flex: 0 0 auto; /* Ne pas étirer le footer */
 }
 </style>

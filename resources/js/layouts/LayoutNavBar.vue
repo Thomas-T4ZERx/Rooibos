@@ -1,7 +1,6 @@
 
 <template>
-    <div class="card">
-        <Toolbar>
+        <Toolbar class="layout-topbar">
             <template #start>
                 <Avatar image="https://i2.wp.com/www.primefaces.org/wp-content/uploads/2021/10/primevue-logo-1.png?fit=263%2C300&ssl=1" style="width: 32px; height: 32px" />
                 <h3 style="margin-left: 15px;">Rooibos</h3>
@@ -53,7 +52,6 @@
 
 
 
-    </div>
 </template>
 
 <script setup>

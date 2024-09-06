@@ -24,11 +24,49 @@ html, body{
     left: 0;
     z-index: 999;
     width: 100%;
-    height: 4rem;
+    height: 5rem;
     transition: width var(--layout-section-transition-duration);
     display: flex;
     color: var(--topbar-item-text-color);
     background-color: var(--topbar-bg);
     border-bottom: 1px solid transparent;
     box-shadow: 0 4px 10px #00000008, 0 0 2px #0000000f, 0 2px 6px #0000001f;
+}
+
+
+.layout-sidebar {
+    position: fixed;
+    height: calc(100% - 4rem);
+    margin-top: 5rem;
+    top: 0;
+    left: 0;
+    width: 14rem;
+    background: var(--menu-bg);
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+.layout-sidebar .layout-menu-container {
+    overflow: auto;
+    flex: 1;
+    padding-bottom: 2rem;
+    background-color: var(--menu-bg);
+    box-shadow: 0 2px 12px #0000000f;
+}
+
+.layout-sidebar .layout-menu {
+    margin: 0;
+    padding: 0 0 0 1.25rem;
+    list-style-type: none;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
 }
