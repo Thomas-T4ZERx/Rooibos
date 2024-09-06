@@ -32,5 +32,4 @@ import LayoutFooter from "./LayoutFooter.vue";
 </script>
 
 <style scoped>
-
 </style>

@@ -1,69 +1,37 @@
 <template>
-    <div class="layout-sidebar ">
-        <Menu :model="items" class="layout-menu-container"/>
+    <div class="layout-sidebar">
+        <Menu :model="items" class="layout-menu-container">
+            <template #item="{ item, props }">
+
+                <a v-ripple @click="test(item)" :target="item.target" v-bind="props.action">
+                    <span :class="item.icon" />
+                    <span class="ml-2">{{ item.label }}</span>
+                </a>
+            </template>
+        </Menu>
     </div>
 </template>
 
 <script setup>
 import { ref } from "vue";
-import MegaMenu from 'primevue/megamenu';
-import LayoutFooter from "./LayoutFooter.vue";
-
+import { router } from '@inertiajs/vue3'
 
 const items = ref([
     {
-        label: 'Documents',
-        items: [
-            {
-                label: 'Dashboard',
-                icon: 'pi pi-home'
-            },
-            {
-                label: 'Search',
-                icon: 'pi pi-search'
-            }
-        ]
+        label: 'Router Link',
+        icon: 'pi pi-palette',
+        route: 'test'
     },
     {
-        label: 'Profile',
-        items: [
-            {
-                label: 'Settings',
-                icon: 'pi pi-cog'
-            },
-            {
-                label: 'Logout',
-                icon: 'pi pi-sign-out'
-            }
-        ]
-    },
-    {
-        label: 'Profile',
-        items: [
-            {
-                label: 'Settings',
-                icon: 'pi pi-cog'
-            },
-            {
-                label: 'Logout',
-                icon: 'pi pi-sign-out'
-            }
-        ]
-    },
-    {
-        label: 'Profile',
-        items: [
-            {
-                label: 'Settings',
-                icon: 'pi pi-cog'
-            },
-            {
-                label: 'Logout',
-                icon: 'pi pi-sign-out'
-            }
-        ]
+        label: 'dash Link',
+        icon: 'pi pi-palette',
+        route: '/'
     },
 ]);
+function test(item){
+    console.log(item.route)
+    router.visit(item.route)
+}
 </script>
 
 <style scoped>
